@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Btn } from './ContactList.styled';
 
 export const ContactsList = ({ contacts, onClickDelBtn }) => {
@@ -16,4 +17,11 @@ export const ContactsList = ({ contacts, onClickDelBtn }) => {
       })}
     </ul>
   );
+};
+
+ContactsList.propTypes = {
+  onClickDelBtn: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.objectOf(PropTypes.string.isRequired).isRequired
+  ).isRequired,
 };
